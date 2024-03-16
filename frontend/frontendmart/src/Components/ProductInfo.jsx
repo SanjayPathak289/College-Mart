@@ -122,7 +122,7 @@ const ProductInfo = (props) => {
 
         }).then((res) => {
             if (res.data.updated) {
-
+                navigate("/myproducts");
             }
         })
     }
