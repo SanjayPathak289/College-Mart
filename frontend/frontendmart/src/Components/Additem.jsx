@@ -64,8 +64,8 @@ const Additem = () => {
             // console.log(imgSrc);
             setProduct({
                 ...product,
-                // pimage : imgNameArray,
-                pimage: ["bg1", "bg1", "bg1", "bg1"]
+                pimage: imgNameArray,
+                // pimage: ["bg1", "bg1", "bg1", "bg1"]
             })
         }
         else {
