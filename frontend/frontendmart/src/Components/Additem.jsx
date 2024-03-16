@@ -19,7 +19,6 @@ const Additem = () => {
         pprice: "",
     });
     const [imgSrc, setImgSrc] = useState([]);
-    const [imgFile, setImgFile] = useState([]);
     const addProductInDb = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -66,11 +65,11 @@ const Additem = () => {
                 return !imgFile.some((existing) => existing === newFile)
             })
             setImgSrc([...imgSrc, ...uniqueFiles]);
-            setImgFile([...imgFile, ...uniqueImgFile])
             // console.log(imgSrc);
             setProduct({
                 ...product,
-                pimage: imgNameArray
+                // pimage : imgNameArray,
+                pimage: ["bg1", "bg1", "bg1", "bg1"]
             })
         }
         else {
