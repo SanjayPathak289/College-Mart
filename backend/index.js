@@ -13,7 +13,7 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://fancy-ray-sombrero.cyclic.app',
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
     optionSuccessStatus: 200
