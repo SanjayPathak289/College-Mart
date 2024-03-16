@@ -37,7 +37,7 @@ const Additem = () => {
         };
         formData.append("json", sendproductData);
         // formData.append("image", imgFile)
-        const res = await axios.post("http://localhost:8080/api/product/additem", formData)
+        const res = await axios.post("https://investment-compass.onrender.com/api/product/additem", formData)
         if (res.data.success) {
             setProduct({
                 pimage: [],

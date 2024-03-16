@@ -13,7 +13,7 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'https://fancy-ray-sombrero.cyclic.app',
+    origin: 'https://investment-compass.onrender.com',
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
     optionSuccessStatus: 200
@@ -21,7 +21,7 @@ app.use(cors({
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.use("/uploads", express.static("./public/Images"));
+app.use("/uploads", express.static("./public/Images"));
 
 
 app.use("/api/user", userRoutes);
