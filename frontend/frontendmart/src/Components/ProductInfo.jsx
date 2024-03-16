@@ -315,7 +315,7 @@ const ProductInfo = (props) => {
                 {userId != JSON.parse(localStorage.getItem("user"))._id ? <Button style={{ cursor: "pointer" }} size={"3"} onClick={handlePayment}>Buy Now</Button> : null}
 
                 {
-                    <Button onClick={() => setChatOpen(!isChatOpen)} size={"3"} style={{ cursor: "pointer" }}>Open Chat</Button>
+                    <Button onClick={() => setChatOpen(!isChatOpen)} size={"3"} style={{ cursor: "pointer" }}>Chat with owner</Button>
                 }
                 {isChatOpen ? (localStorage.getItem("user") ?
 
