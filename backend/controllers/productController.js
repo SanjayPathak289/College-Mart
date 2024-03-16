@@ -2,7 +2,6 @@ const UserCred = require("../db/coll");
 
 const addItem = async (req, res) => {
     const { pname, pdesc, pcateg, pprice, pimage } = JSON.parse(req.body.json);
-
     await UserCred.updateOne({
         email: req.user
     }, {

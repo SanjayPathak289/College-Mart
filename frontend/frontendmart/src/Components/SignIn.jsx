@@ -33,13 +33,13 @@ const SignIn = ({ setIsAuth }) => {
         const sendSignInData = JSON.stringify(signinData);
         
         try {
-            const res = await axios.post("https://investment-compass.onrender.com/api/user/signin", {
+            const res = await axios.post("http://localhost:8080/api/user/signin", {
                 email: signinData.email,
                 pass: signinData.pass
             }, {
                 headers: {
                     "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "https://investment-compass.onrender.com",
+                    "Access-Control-Allow-Origin": "http://localhost:8080",
                 }
             })
 
