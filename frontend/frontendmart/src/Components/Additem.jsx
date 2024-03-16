@@ -35,7 +35,6 @@ const Additem = () => {
             body: formData
         };
         formData.append("json", sendproductData);
-        // formData.append("image", imgFile)
         const res = await axios.post("https://investment-compass.onrender.com/api/product/additem", formData)
         if (res.data.success) {
             setProduct({
@@ -60,9 +59,6 @@ const Additem = () => {
             const newFiles = Array.from(files);
             const uniqueFiles = newFiles.filter((newFile) => {
                 return !imgSrc.some((existing) => existing.name === newFile.name);
-            })
-            const uniqueImgFile = newFiles.filter((newFile) => {
-                return !imgFile.some((existing) => existing === newFile)
             })
             setImgSrc([...imgSrc, ...uniqueFiles]);
             // console.log(imgSrc);
