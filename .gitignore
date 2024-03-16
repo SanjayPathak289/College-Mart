@@ -1,3 +1,3 @@
-frontend/frontendmart/node_modules
-node_modules
-.env
+**/.env
+backend/node_modules/
+frontend/frontendmart/node_modules/
