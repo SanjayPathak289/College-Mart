@@ -28,7 +28,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes)
 app.use("/api/chats", chatRoutes)
 app.use("/api/message", messageRoutes)
-app.use("/referral", referralRoute);
+app.use("/referrals", referralRoute);
 app.use("/api/payment", paymentRoutes);
 
 // ----------Deployment----------
