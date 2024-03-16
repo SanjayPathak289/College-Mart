@@ -49,7 +49,7 @@ else {
 // ----------Deployment----------
 
 db.connectDb().then(() => {
-    app.listen(8080, () => {
+    app.listen(3000, () => {
     })
 });
 
