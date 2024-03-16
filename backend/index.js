@@ -9,6 +9,7 @@ const chatRoutes = require("./routes/chatRoutes")
 const messageRoutes = require("./routes/messageRoutes")
 const referralRoute = require("./routes/referralRoute");
 const paymentRoutes = require("./routes/paymentRoutes");
+
 const app = express();
 app.use(express.json());
 app.use(cors({
