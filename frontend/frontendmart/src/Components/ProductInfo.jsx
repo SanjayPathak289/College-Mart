@@ -116,8 +116,10 @@ const ProductInfo = (props) => {
         setProduct({
             pimage: product.pimage,
             ...updateCourse,
-
         })
+        if (location.state != null) {
+            window.history.replaceState(location.state, "", window.location.href);
+        };
         axios.post("https://investment-compass.onrender.com/api/product/updateCourse", {
             userId, product: updateCourse
 

@@ -7,7 +7,6 @@ import axios from 'axios'
 const Singleproduct = (props) => {
     const [id, setId] = useState("");
     const [owner, setOwner] = useState("");
-    console.log(props);
     useEffect(() => {
         setId(props.id);
     }, [])
