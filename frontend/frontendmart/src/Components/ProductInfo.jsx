@@ -45,7 +45,7 @@ const ProductInfo = (props) => {
     }, [setChatOpen])
     useEffect(() => {
         const p = () => {
-            axios.get("http://localhost:3000/api/product/addwishlist", {
+            axios.get("https://investment-compass.onrender.com/api/product/addwishlist", {
                 params: {
                     param1: userId,
                     param2: product
@@ -66,7 +66,7 @@ const ProductInfo = (props) => {
     const addWhishlist = () => {
         if (localStorage.getItem("user")) {
             if (!isWishList) {
-                axios.post("http://localhost:3000/api/product/addwishlist", { userId, product })
+                axios.post("https://investment-compass.onrender.com/api/product/addwishlist", { userId, product })
                     .then((res) => {
                         if (res.data.added) {
                             setWishList(true);
@@ -74,7 +74,7 @@ const ProductInfo = (props) => {
                     })
             }
             else {
-                axios.delete("http://localhost:3000/api/product/addwishlist", {
+                axios.delete("https://investment-compass.onrender.com/api/product/addwishlist", {
                     data: {
                         userId: userId,
                         product: product
@@ -94,7 +94,7 @@ const ProductInfo = (props) => {
     }
     const deleteCourse = () => {
         try {
-            axios.delete("http://localhost:3000/api/product/delete", {
+            axios.delete("https://investment-compass.onrender.com/api/product/delete", {
                 data: {
                     userId: userId,
                     product: product
@@ -118,7 +118,7 @@ const ProductInfo = (props) => {
             ...updateCourse,
 
         })
-        axios.post("http://localhost:3000/api/product/updateCourse", {
+        axios.post("https://investment-compass.onrender.com/api/product/updateCourse", {
             userId, product: updateCourse
 
         }).then((res) => {
@@ -136,12 +136,12 @@ const ProductInfo = (props) => {
         })
     }
     const copyToClipboard = () => {
-        navigator.clipboard.writeText("http://localhost:5173/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id);
+        navigator.clipboard.writeText("https://investment-compass.onrender.com/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id);
         setCopyState("Copied");
     }
 
     const saveBuyData = async () => {
-        const { data } = await axios.post("http://localhost:3000/api/payment/save",
+        const { data } = await axios.post("https://investment-compass.onrender.com/api/payment/save",
             {
                 userId: JSON.parse(localStorage.getItem("user"))._id,
                 id: id,
@@ -162,12 +162,12 @@ const ProductInfo = (props) => {
             currency: data.currency,
             name: product.pname,
             description: product.pdesc,
-            image: `http://localhost:3000/uploads/${d}`,
+            image: `https://investment-compass.onrender.com/uploads/${d}`,
             order_id: data.id,
             handler: async (response) => {
                 try {
                     const whoBought = `${JSON.parse(localStorage.getItem("user")).fname} ${JSON.parse(localStorage.getItem("user")).lname}`
-                    const { data } = await axios.post("http://localhost:3000/api/payment/verify", { response, refId, whoBought, userId });
+                    const { data } = await axios.post("https://investment-compass.onrender.com/api/payment/verify", { response, refId, whoBought, userId });
                     if (data.message == "Payment Verified Successfully") {
                         saveBuyData();
                         navigate("/mypurchases")
@@ -186,7 +186,7 @@ const ProductInfo = (props) => {
     }
     const handlePayment = async (req, res) => {
         try {
-            const { data } = await axios.post("http://localhost:3000/api/payment/orders", {
+            const { data } = await axios.post("https://investment-compass.onrender.com/api/payment/orders", {
                 amount: product.pprice
             })
             // console.log(data);
@@ -204,14 +204,14 @@ const ProductInfo = (props) => {
             <div className="imageTab">
                 <div className='firstImageTab'>
                     {
-                        product && product.pimage && product.pimage.length ? <img style={{ borderRadius: "20px" }} src={"http://localhost:3000/uploads/" + product.pimage[firstImgSrc]} alt="" /> : null
+                        product && product.pimage && product.pimage.length ? <img style={{ borderRadius: "20px" }} src={"https://investment-compass.onrender.com/uploads/" + product.pimage[firstImgSrc]} alt="" /> : null
                     }
                 </div>
                 <div className='remainingImageTab'>
                     {
                         product && product.pimage && product.pimage.length > 1 ? product.pimage.map((val, index) => {
                             return (
-                                <img key={index} style={{ borderRadius: "10px", cursor: "pointer", border: index === firstImgSrc ? "2px solid black" : null }} src={"http://localhost:3000/uploads/" + val} alt="Photo" onClick={() => setFirstImgSrc(index)} />
+                                <img key={index} style={{ borderRadius: "10px", cursor: "pointer", border: index === firstImgSrc ? "2px solid black" : null }} src={"https://investment-compass.onrender.com/uploads/" + val} alt="Photo" onClick={() => setFirstImgSrc(index)} />
                             )
                         }) : null
                     }
@@ -348,7 +348,7 @@ const ProductInfo = (props) => {
                                         <label>
                                             <TextField.Input disabled
                                                 ref={textFieldRef}
-                                                defaultValue={"http://localhost:5173/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id}
+                                                defaultValue={"https://investment-compass.onrender.com/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id}
                                                 placeholder="Your referral link"
                                             />
                                             <Button onClick={copyToClipboard}>{copyState}</Button>

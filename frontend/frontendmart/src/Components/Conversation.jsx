@@ -7,7 +7,7 @@ const Conversation = ({ conversation, currentUser }) => {
     const friendId = conversation.members.find(m => m !== currentUser._id);
     const getUser = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/user/getbyid", {
+        const res = await axios.get("https://investment-compass.onrender.com/api/user/getbyid", {
           params: {
             user: friendId
           }

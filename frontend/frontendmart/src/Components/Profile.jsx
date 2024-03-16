@@ -19,7 +19,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/user/profile").then((res) => {
+        axios.get("https://investment-compass.onrender.com/api/user/profile").then((res) => {
             if (res.data.message !== "Error") {
                 setProfile(res.data);
             }

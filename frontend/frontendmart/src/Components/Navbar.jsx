@@ -14,7 +14,7 @@ const Navbar = ({ isAuth, setIsAuth }) => {
   }, [isAuth])
 
   const handleLogout = () => {
-    axios.get("http://localhost:3000/api/user/logout")
+    axios.get("https://investment-compass.onrender.com/api/user/logout")
       .then(res => {
         if (res.data) {
           // props.setIsAuth(false);

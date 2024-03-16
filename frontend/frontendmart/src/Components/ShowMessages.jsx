@@ -15,7 +15,7 @@ const ShowMessages = (props) => {
                     receiverId: props.rId,
                 }
             }
-            const conv = await axios.post("http://localhost:3000/api/chats/conversation/", sendReceiveId);
+            const conv = await axios.post("https://investment-compass.onrender.com/api/chats/conversation/", sendReceiveId);
             setCurrentChat(conv.data);
         }
         convFunc();
@@ -29,7 +29,7 @@ const ShowMessages = (props) => {
 
     useEffect(() => {
         const getMessages = async () => {
-            const res = await axios.get("http://localhost:3000/api/message/messages", {
+            const res = await axios.get("https://investment-compass.onrender.com/api/message/messages", {
                 params: {
                     cid: currentChat._id,
                 }
@@ -52,7 +52,7 @@ const ShowMessages = (props) => {
             text: newMessage,
         };
         try {
-            const res = await axios.post("http://localhost:3000/api/message/messages", message);
+            const res = await axios.post("https://investment-compass.onrender.com/api/message/messages", message);
             setMessages([...messages, res.data]);
             setNewMessage("");
         } catch (error) {

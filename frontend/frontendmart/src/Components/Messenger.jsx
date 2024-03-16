@@ -17,7 +17,7 @@ const Messenger = () => {
         const getConversation = async () => {
             try {
 
-                const res = await axios.get("http://localhost:3000/api/api/chats/allconversation/" + user._id)
+                const res = await axios.get("https://investment-compass.onrender.com/api/chats/allconversation/" + user._id)
                 // console.log(res.data);
                 setConversations(res.data);
 
@@ -31,7 +31,7 @@ const Messenger = () => {
     useEffect(() => {
         const getMessages = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/api/message/messages/" + currentChat?._id);
+                const res = await axios.get("https://investment-compass.onrender.com/api/message/messages/" + currentChat?._id);
 
                 setMessages(res.data);
             } catch (error) {
@@ -49,7 +49,7 @@ const Messenger = () => {
             text: newMessage,
         };
         try {
-            const res = await axios.post("http://localhost:3000/api/message/messages", message);
+            const res = await axios.post("https://investment-compass.onrender.com/api/message/messages", message);
             setMessages([...messages, res.data]);
             setNewMessage("");
         } catch (error) {

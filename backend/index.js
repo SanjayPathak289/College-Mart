@@ -13,7 +13,7 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://investment-compass.onrender.com/',
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
     optionSuccessStatus: 200
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
     console.log(__dirname1);
     app.use(express.static(path.join(__dirname1, '../frontend/frontendmart/dist')));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname1 , "../", "frontend", "frontendmart", "dist", "index.html"));
+        res.sendFile(path.resolve(__dirname1, "../", "frontend", "frontendmart", "dist", "index.html"));
     })
 }
 else {

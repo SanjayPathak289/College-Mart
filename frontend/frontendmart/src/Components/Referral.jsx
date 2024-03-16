@@ -12,7 +12,7 @@ const Referral = () => {
   const [userId, setUserId] = useState();
   const refId = referralId.get("id");
   useEffect(() => {
-    axios.get("http://localhost:3000/referral", {
+    axios.get("https://investment-compass.onrender.com/referral", {
       params: {
         id: refId
       }
