@@ -204,14 +204,14 @@ const ProductInfo = (props) => {
             <div className="imageTab">
                 <div className='firstImageTab'>
                     {
-                        product && product.pimage && product.pimage.length ? <img style={{ borderRadius: "20px" }} src={"https://investment-compass.onrender.com/uploads/" + product.pimage[firstImgSrc]} alt="" /> : null
+                        product && product.pimage && product.pimage.length ? <img style={{ borderRadius: "20px" }} src={"https://investment-compass.onrender.com/public/Images/" + product.pimage[firstImgSrc]} alt="" /> : null
                     }
                 </div>
                 <div className='remainingImageTab'>
                     {
                         product && product.pimage && product.pimage.length > 1 ? product.pimage.map((val, index) => {
                             return (
-                                <img key={index} style={{ borderRadius: "10px", cursor: "pointer", border: index === firstImgSrc ? "2px solid black" : null }} src={"https://investment-compass.onrender.com/uploads/" + val} alt="Photo" onClick={() => setFirstImgSrc(index)} />
+                                <img key={index} style={{ borderRadius: "10px", cursor: "pointer", border: index === firstImgSrc ? "2px solid black" : null }} src={"https://investment-compass.onrender.com/public/Images/" + val} alt="Photo" onClick={() => setFirstImgSrc(index)} />
                             )
                         }) : null
                     }
@@ -298,7 +298,7 @@ const ProductInfo = (props) => {
                                 </Dialog.Content>
 
                             </Dialog.Root>
-                            <Button style={{ cursor: "pointer" }}  onClick={deleteCourse}>
+                            <Button style={{ cursor: "pointer" }} onClick={deleteCourse}>
                                 <Cross1Icon />Delete
                             </Button>
                         </>
