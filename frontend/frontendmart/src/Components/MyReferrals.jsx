@@ -8,7 +8,7 @@ const MyReferrals = () => {
     useEffect(() => {
         const getR = async () => {
 
-            const { data } = await axios.get("https://investment-compass.onrender.com/referral/myreferrals", {
+            const { data } = await axios.get("https://investment-compass-urnz.onrender.com/referral/myreferrals", {
                 params: {
                     id: JSON.parse(localStorage.getItem("user"))._id
                 }
@@ -20,7 +20,7 @@ const MyReferrals = () => {
     useEffect(() => {
         const getR = async () => {
 
-            const { data } = await axios.get("https://investment-compass.onrender.com/api/user/sales", {
+            const { data } = await axios.get("https://investment-compass-urnz.onrender.com/api/user/sales", {
                 params: {
                     id: JSON.parse(localStorage.getItem("user"))._id
                 }
@@ -104,7 +104,7 @@ const MyReferrals = () => {
                 <div className='eachReferralDiv'>
 
                     <div>
-                        <a href={"https://investment-compass.onrender.com/referral?id=" + product.refId} style={{ textDecoration: "none" }}>{"hhttps://investment-compass.onrender.com/referral?id=" + product.refId}</a>
+                        <a href={"https://investment-compass-urnz.onrender.com/referral?id=" + product.refId} style={{ textDecoration: "none" }}>{"https://investment-compass-urnz.onrender.com/referral?id=" + product.refId}</a>
 
                     </div>
                     <DropdownMenu.Root>

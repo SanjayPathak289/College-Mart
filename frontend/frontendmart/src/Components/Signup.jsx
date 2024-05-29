@@ -39,7 +39,7 @@ const Signup = () => {
                 },
                 body: sendSignUpData
             };
-            const response = await fetch('https://investment-compass.onrender.com/api/user/signup', fetchOptions);
+            const response = await fetch('https://investment-compass-urnz.onrender.com/api/user/signup', fetchOptions);
             if (response.ok) {
                 const data = await response.json();
                 setSignUpData({

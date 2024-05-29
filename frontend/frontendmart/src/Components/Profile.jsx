@@ -20,7 +20,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        axios.get("https://investment-compass.onrender.com/api/user/profile").then((res) => {
+        axios.get("https://investment-compass-urnz.onrender.com/api/user/profile").then((res) => {
             if (res.data.message !== "Error") {
                 setProfile(res.data);
                 setOwner(`${res.data.fname} ${res.data.lname}`)

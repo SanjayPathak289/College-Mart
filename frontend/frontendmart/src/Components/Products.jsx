@@ -10,7 +10,7 @@ const Products = () => {
     const [searchItem, setSearchItem] = useState("");
     useEffect(() => {
         const getP = () => {
-            axios.get("https://investment-compass.onrender.com/api/product/products").then((res) => {
+            axios.get("https://investment-compass-urnz.onrender.com/api/product/products").then((res) => {
                 setAllProducts(res.data);
                 setCategoryProducts(res.data);
                 // console.log(res.data);

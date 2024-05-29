@@ -12,7 +12,7 @@ const Referral = () => {
   const [userId, setUserId] = useState();
   const refId = referralId.get("id");
   useEffect(() => {
-    axios.get("https://investment-compass.onrender.com/referrals", {
+    axios.get("https://investment-compass-urnz.onrender.com/referrals", {
       params: {
         id: refId
       }

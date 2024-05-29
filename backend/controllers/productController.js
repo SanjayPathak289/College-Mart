@@ -136,7 +136,10 @@ const updateCourse = async (req, res) => {
         },
         {
             $set: {
-                "productinfo.$.pname": product.pname
+                "productinfo.$.pname": product.pname,
+                "productinfo.$.pdesc": product.pdesc,
+                "productinfo.$.pcateg": product.pcateg,
+                "productinfo.$.pprice": product.pprice
             }
         }
     )

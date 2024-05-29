@@ -7,7 +7,7 @@ const PurchasedProducts = () => {
     const [purchased, setPurchased] = useState([])
     useEffect(() => {
         const fetchUserData = async () => {
-            const { data } = await axios.get("https://investment-compass.onrender.com/api/user/purchased", {
+            const { data } = await axios.get("https://investment-compass-urnz.onrender.com/api/user/purchased", {
                 params: {
                     id: userId
                 }

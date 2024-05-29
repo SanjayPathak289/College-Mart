@@ -6,7 +6,7 @@ const Myproduct = ({ userId, product }) => {
     const [owner, setOwner] = useState("");
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get("https://investment-compass.onrender.com/api/user/getbyid", {
+            const res = await axios.get("https://investment-compass-urnz.onrender.com/api/user/getbyid", {
                 params: {
                     user: userId
                 }
@@ -22,7 +22,7 @@ const Myproduct = ({ userId, product }) => {
     return (
         <div className='myProductInfo'>
             <div className='myImageProduct'>
-                {product.pimage ? <img src={"https://investment-compass.onrender.com/uploads/" + product.pimage[0]} alt="" />
+                {product.pimage ? <img src={"https://investment-compass-urnz.onrender.com/uploads/" + product.pimage[0]} alt="" />
                     : null}
             </div>
             <div className='myInfoProduct'>

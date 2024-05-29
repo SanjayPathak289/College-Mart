@@ -35,7 +35,7 @@ const Additem = () => {
             body: formData
         };
         formData.append("json", sendproductData);
-        const res = await axios.post("https://investment-compass.onrender.com/api/product/additem", formData)
+        const res = await axios.post("https://investment-compass-urnz.onrender.com/api/product/additem", formData)
         if (res.data.success) {
             setProduct({
                 pimage: [],
@@ -124,9 +124,9 @@ const Additem = () => {
                         <select name="pcateg" id="pcateg" onChange={inputEvent} required>
                             <option value="" disabled selected>Select your Category</option>
                             <option value="academics">Academics</option>
-                            <option value="electronics">Technology</option>
-                            <option value="sportsequipment">Investments</option>
-                            <option value="book">Trading</option>
+                            <option value="technology">Technology</option>
+                            <option value="investments">Investments</option>
+                            <option value="trading">Trading</option>
                             <option value="miscellaneous">Miscellaneous</option>
                         </select>
 
