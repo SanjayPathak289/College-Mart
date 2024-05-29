@@ -135,7 +135,7 @@ const ProductInfo = (props) => {
         })
     }
     const copyToClipboard = () => {
-        navigator.clipboard.writeText("http://localhost:5173/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id);
+        navigator.clipboard.writeText("https://investment-compass-urnz.onrender.com/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id);
         setCopyState("Copied");
     }
 
@@ -347,7 +347,7 @@ const ProductInfo = (props) => {
                                         <label>
                                             <TextField.Input disabled
                                                 ref={textFieldRef}
-                                                defaultValue={"http://localhost:5173/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id}
+                                                defaultValue={"https://investment-compass-urnz.onrender.com/referral?id=" + JSON.parse(localStorage.getItem("user"))._id + id}
                                                 placeholder="Your referral link"
                                             />
                                             <Button onClick={copyToClipboard}>{copyState}</Button>
